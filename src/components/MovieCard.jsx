@@ -1,11 +1,12 @@
 import React from 'react'
 
+const PROJECT_PATH = import.meta.env.BASE_URL
 const MovieCard = ({movie:{ title, vote_average, release_date, original_language, poster_path }}) => {
   return (
     <div className='movie-card'>
       {/* <p className='text-white'> {title} </p> */}
       <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` :
-      `/no-movie.png`} alt={title}/>
+      `${PROJECT_PATH}no-movie.png`} alt={title}/>
       <div className="mt-4">
         <h3>{title}</h3>
         <div className="content">
